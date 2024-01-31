@@ -1,5 +1,9 @@
-# Main function
 import webbrowser as wb
+from kivy.app import App
+from kivy.uix.boxlayout import BoxLayout
+
+
+# Main function
 def open_webs():
     recruiter_websites = ["https://www.agrijob.co.za/jobs/",
                           "https://jobs.m3online.co.za/sys/jobList",
@@ -11,5 +15,17 @@ def open_webs():
     for site in recruiter_websites:
         wb.open_new_tab(site)
 
-open_webs()
 
+# open_webs()
+
+
+class main_app(App):
+    pass
+
+
+class main_layout(BoxLayout):
+    pass
+
+
+
+main_app().run()
