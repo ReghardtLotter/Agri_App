@@ -1,31 +1,30 @@
 import webbrowser as wb
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.widget import Widget
 
 
-# Main function
-def open_webs():
-    recruiter_websites = ["https://www.agrijob.co.za/jobs/",
-                          "https://jobs.m3online.co.za/sys/jobList",
-                          "https://za.indeed.com/jobs?q=agriculture&l=Western+Cape&from=searchOnHP&vjk=21775e26431b8827",
-                          "https://farmmanagersa.co.za/job-vacancies/",
-                          "https://www.exceed.co.za/job-category/agriculture/",
-                          "https://casupport.co.za/vacancies/",
-                          ]
-    for site in recruiter_websites:
-        wb.open_new_tab(site)
+recruiter_websites = {"Agrijob": "https://www.agrijob.co.za/jobs/",
+                      "M3 recruitment": "https://jobs.m3online.co.za/sys/jobList",
+                      "Indeed": "https://za.indeed.com/jobs?q=agriculture&l=Western+Cape&from=searchOnHP&vjk=21775e26431b8827",
+                      "Farm Managers": "https://farmmanagersa.co.za/job-vacancies/",
+                      "Exceed recruitment": "https://www.exceed.co.za/job-category/agriculture/",
+                      "CA support": "https://casupport.co.za/vacancies/"
+                      }
 
-
-# open_webs()
-
-
-class main_app(App):
+class MainApp(App):
     pass
 
 
-class main_layout(BoxLayout):
+class MainWidgets(Widget):
     pass
 
 
+class MainLayout(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
-main_app().run()
+
+
+
+MainApp().run()
